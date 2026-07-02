@@ -1,0 +1,26 @@
+{
+  "doctor": {
+    "name": "Primary Care Doctor",
+    "phone": "9944332266"
+  },
+  "pharmacy": {
+    "name": "Pharmacy",
+    "phone": "6544848974"
+  },
+  "caregiver": {
+    "name": "Caregiver",
+    "phone": "64646465465"
+  },
+  "hospital": {
+    "name": "Nearest Hospital",
+    "phone": "98964466525"
+  },
+  "emergency": {
+    "name": "Emergency (911)",
+    "phone": "911"
+  },
+  "poison_control": {
+    "name": "Poison Control",
+    "phone": "1-800-222-1222"
+  }
+}

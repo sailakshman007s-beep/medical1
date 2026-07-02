@@ -1,0 +1,9 @@
+node_modules/
+.env
+dist/
+*.log
+medication_data.json
+contacts.json
+__pycache__/
+*.pyc
+.streamlit/secrets.toml

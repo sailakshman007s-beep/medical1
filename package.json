@@ -1,0 +1,14 @@
+{
+  "name": "medication-reminder-app",
+  "version": "1.0.0",
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "serve": "node server.js"
+  },
+  "devDependencies": {
+    "electron": "^26.2.2",
+    "netlify-cli": "^26.1.0"
+  }
+}

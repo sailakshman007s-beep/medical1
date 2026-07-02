@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Medication Reminder</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="hero">
+        <div class="menu-bar">
+          <div>
+            <h1>Medication Menu</h1>
+            <p>Simple and clear reminders for daily medicine.</p>
+          </div>
+        </div>
+        <div class="menu-options">
+          <button type="button" class="menu-btn active" data-target="home">Home</button>
+          <button type="button" class="menu-btn" data-target="reminders">Reminders</button>
+          <button type="button" class="menu-btn" data-target="tracker">Tracker</button>
+          <button type="button" class="menu-btn" data-target="careInfo">Care Info</button>
+          <button type="button" class="menu-btn" data-target="contacts">Contacts</button>
+        </div>
+      </header>
+
+      <section id="homeSection" class="page-section">
+        <section class="card clock-card">
+          <p class="label">Current time</p>
+          <div id="currentTime" class="clock">--:--</div>
+        </section>
+
+        <section class="card">
+          <h2>Welcome</h2>
+          <p>Use this menu to view reminders, helpful care details, and emergency contacts in one place.</p>
+        </section>
+      </section>
+
+      <section id="remindersSection" class="page-section hidden">
+        <section class="card">
+          <h2>Add a reminder</h2>
+          <form id="reminderForm" class="reminder-form">
+            <label>
+              Medicine name
+              <input id="medName" name="medName" type="text" placeholder="Example: Blood Pressure Tablet" required />
+            </label>
+
+            <label>
+              Dosage
+              <input id="dosage" name="dosage" type="text" placeholder="Example: 1 tablet" required />
+            </label>
+
+            <label>
+              Reminder time
+              <input id="reminderTime" name="reminderTime" type="time" required />
+            </label>
+
+            <label>
+              Notes
+              <textarea id="notes" name="notes" rows="3" placeholder="Example: Take after breakfast"></textarea>
+            </label>
+
+            <label>
+              How to take it
+              <input id="instructions" name="instructions" type="text" placeholder="Example: With water after breakfast" />
+            </label>
+
+            <label>
+              Refill date
+              <input id="refillDate" name="refillDate" type="date" />
+            </label>
+
+            <label>
+              Doctor or pharmacy contact
+              <input id="doctorInfo" name="doctorInfo" type="text" placeholder="Example: Dr. Smith • 555-0123" />
+            </label>
+
+            <label>
+              Frequency
+              <input id="frequency" name="frequency" type="text" placeholder="Example: Once daily" />
+            </label>
+
+            <label>
+              Quantity left
+              <input id="quantityLeft" name="quantityLeft" type="text" placeholder="Example: 14 tablets" />
+            </label>
+
+            <label>
+              Purpose or condition
+              <input id="purpose" name="purpose" type="text" placeholder="Example: Blood pressure" />
+            </label>
+
+            <label>
+              Caregiver or family contact
+              <input id="caregiver" name="caregiver" type="text" placeholder="Example: Daughter: 555-0114" />
+            </label>
+
+            <button type="submit">Save reminder</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <div class="section-head">
+            <h2>Today’s reminders</h2>
+            <button id="notifyButton" class="secondary" type="button">Allow reminders</button>
+          </div>
+          <div id="reminderList" class="reminder-list"></div>
+        </section>
+      </section>
+
+      <section id="trackerSection" class="page-section hidden">
+        <section class="card">
+          <h2>Medication Tracker</h2>
+          <p>Mark medicines as taken and keep track of your daily schedule.</p>
+          <div id="trackerList" class="tracker-list"></div>
+        </section>
+      </section>
+
+      <section id="careInfoSection" class="page-section hidden">
+        <section class="card">
+          <h2>Care information</h2>
+          <ul class="info-list">
+            <li class="info-item"><strong>Take medicine with water</strong><span>Use a full glass if allowed by the doctor.</span></li>
+            <li class="info-item"><strong>Keep medicine in a safe place</strong><span>Store away from heat and direct sunlight.</span></li>
+            <li class="info-item"><strong>Check refill dates</strong><span>Plan ahead before the medicine runs out.</span></li>
+          </ul>
+        </section>
+      </section>
+
+      <section id="contactsSection" class="page-section hidden">
+        <section class="card">
+          <h2>Important contacts</h2>
+          <ul class="contact-list">
+            <li class="contact-item"><strong>Doctor</strong><span>Dr. Smith • 555-0123</span></li>
+            <li class="contact-item"><strong>Pharmacy</strong><span>City Pharmacy • 555-0148</span></li>
+            <li class="contact-item"><strong>Caregiver</strong><span>Emma • 555-0199</span></li>
+          </ul>
+        </section>
+      </section>
+    </div>
+
+    <div id="modal" class="modal hidden" role="dialog" aria-live="polite">
+      <div class="modal-card">
+        <h3>Time to take your medicine</h3>
+        <div id="modalContent"></div>
+        <button id="closeModal" type="button">Done</button>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
